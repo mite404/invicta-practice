@@ -3,21 +3,20 @@
  */
 
 // Status options for campaign tasks
-export type TaskStatus = "in_progress" | "completed" | "todo" | "rejected"
+export type TaskStatus = "in_progress" | "completed" | "todo" | "blocked";
 
 // Priority levels for task organization
-export type Priority = "high" | "medium" | "low"
+export type Priority = "high" | "medium" | "low";
 
 // Main task interface
 export interface Task {
-  id: string
-  title: string
-  description?: string
-  status: TaskStatus
-  priority: Priority
-  assignee?: string      // organizer/volunteer name
-  precinct?: string      // geographic unit
-  dueDate?: string       // ISO date string
-  createdAt: string
+  id: string;
+  title: string;
+  description?: string;
+  status: TaskStatus;
+  priority: Priority;
+  assignee?: string; // organizer/volunteer name
+  precinct?: string; // geographic unit
+  dueDate?: string; // ISO date string
+  createdAt: string;
 }
-,
