@@ -3,20 +3,21 @@
  */
 
 // Status options for campaign tasks
-export type TaskStatus = ___________
+export type TaskStatus = "in_progress" | "completed" | "todo" | "rejected"
 
 // Priority levels for task organization
-export type Priority = ___________
+export type Priority = "high" | "medium" | "low"
 
 // Main task interface
 export interface Task {
   id: string
   title: string
   description?: string
-  status: ___________
-  priority: ___________
+  status: TaskStatus
+  priority: Priority
   assignee?: string      // organizer/volunteer name
   precinct?: string      // geographic unit
   dueDate?: string       // ISO date string
   createdAt: string
 }
+,
