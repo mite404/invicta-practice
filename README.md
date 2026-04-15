@@ -2,7 +2,8 @@
 
 Interview prep for **Invicta Software Engineering internship** — a React/TypeScript/Supabase campaign task management system.
 
-Three independent tutorial modules that teach core web development skills through hands-on implementation. Work through the stubs, then reset and re-implement from scratch.
+Three independent tutorial modules that teach core web development skills through
+hands-on implementation. Work through the stubs, then reset and re-implement from scratch.
 
 ## Quick Start
 
@@ -17,6 +18,7 @@ cd ../03-supabase && bun install && bun dev
 ## Modules
 
 ### 1️⃣ **Components** — React UI Fundamentals
+
 Learn TypeScript types, component composition, and React fundamentals.
 
 - **5 challenges**: Types → StatusBadge → TaskCard → TaskList → TaskForm
@@ -27,6 +29,7 @@ Learn TypeScript types, component composition, and React fundamentals.
 [📖 Start here →](01-components/tutorial.md)
 
 ### 2️⃣ **CRUD Operations** — State Management & Hooks
+
 Learn custom hooks, state management, and async patterns.
 
 - **4 challenges**: useTaskManager → filtering → useAsyncTask → optimistic updates
@@ -37,6 +40,7 @@ Learn custom hooks, state management, and async patterns.
 [📖 Start here →](02-crud/tutorial.md)
 
 ### 3️⃣ **Supabase Integration** — Backend & Real-time
+
 Learn database operations, real-time subscriptions, and backend integration.
 
 - **5 challenges**: Client setup → database types → read → write → real-time
@@ -50,7 +54,8 @@ Learn database operations, real-time subscriptions, and backend integration.
 
 ## Domain Context
 
-Campaign task management for **Invicta** organizers and volunteers. Realistic data shapes used across all modules:
+Campaign task management for **Invicta** organizers and volunteers.
+Realistic data shapes used across all modules:
 
 ```typescript
 type TaskStatus = 'todo' | 'in_progress' | 'complete' | 'blocked'
@@ -74,12 +79,14 @@ interface Task {
 ## How to Use These Modules
 
 ### First Pass: Guided Implementation
+
 1. Open the module's `tutorial.md`
 2. Read the concept and hint for each challenge
 3. Implement the stub file (stubs have `___________` blanks)
 4. Check your work against the full solution at the end of the tutorial
 
 ### Reset & Re-implement
+
 ```bash
 cd 01-components
 git checkout src/  # Restore all stubs to blank state
@@ -87,6 +94,7 @@ bun dev            # Re-implement from scratch
 ```
 
 ### Study Mode
+
 - Compare your implementation against the full solution in the tutorial
 - Understand **why** certain patterns are used (see "Key points" in solutions)
 - Adapt patterns to similar problems in other modules
@@ -119,6 +127,7 @@ After completing all three modules, you'll understand:
 ## Interview Context
 
 This repo mirrors real Invicta engineering challenges:
+
 - **Components**: Campaigns need customizable UI widgets that evolve with org needs
 - **CRUD**: Task coordination requires reliable state management across volunteer teams
 - **Real-time**: Organizers need to see task updates instantly as volunteers work
@@ -127,19 +136,9 @@ Design your code to be readable, resilient, and adaptable — the same standards
 
 ---
 
-## GitHub & Interview Narrative
+### Resetting stubs in a mono repo
 
-Push this repo to GitHub to track your progress and show consistent commitment:
-
-```bash
-cd invicta-practice
-git remote add origin https://github.com/YOUR_USERNAME/invicta-practice.git
-git push -u origin main
-```
-
-### Commit Strategy
-
-**Commit as you complete each challenge**, not just at the end. This builds a narrative of learning:
+**Commit as you complete each challenge**, not just at the end.
 
 ```bash
 # Work through module 1
@@ -162,16 +161,3 @@ git checkout 01-components/src/  # Restore stubs to blank state
 git add -A
 git commit -m "Redo Module 1: Second pass - deeper understanding"
 ```
-
-### Why This Matters for Interviews
-
-- **Consistency**: Employers see daily commits, not week-long gaps
-- **Learning narrative**: Multiple passes on the same module show growth
-- **Realistic workflow**: Professional projects live in git; this mimics that
-- **Portfolio**: Your GitHub shows breadth (3 modules) and depth (multiple attempts)
-
-Even if a module takes multiple sessions, each day's work shows up as a commit on your profile.
-
----
-
-Good luck! 🚀
