@@ -127,4 +127,51 @@ Design your code to be readable, resilient, and adaptable — the same standards
 
 ---
 
+## GitHub & Interview Narrative
+
+Push this repo to GitHub to track your progress and show consistent commitment:
+
+```bash
+cd invicta-practice
+git remote add origin https://github.com/YOUR_USERNAME/invicta-practice.git
+git push -u origin main
+```
+
+### Commit Strategy
+
+**Commit as you complete each challenge**, not just at the end. This builds a narrative of learning:
+
+```bash
+# Work through module 1
+cd 01-components && bun dev
+
+# After implementing Challenge 1
+git add -A
+git commit -m "Challenge 1: Implement StatusBadge component"
+
+# After implementing Challenge 2
+git add -A
+git commit -m "Challenge 2: Implement TaskCard with composition"
+
+# ... continue through all challenges ...
+
+# When ready to redo from scratch (days/weeks later)
+git checkout 01-components/src/  # Restore stubs to blank state
+
+# Re-implement with fresh commits showing iteration
+git add -A
+git commit -m "Redo Module 1: Second pass - deeper understanding"
+```
+
+### Why This Matters for Interviews
+
+- **Consistency**: Employers see daily commits, not week-long gaps
+- **Learning narrative**: Multiple passes on the same module show growth
+- **Realistic workflow**: Professional projects live in git; this mimics that
+- **Portfolio**: Your GitHub shows breadth (3 modules) and depth (multiple attempts)
+
+Even if a module takes multiple sessions, each day's work shows up as a commit on your profile.
+
+---
+
 Good luck! 🚀
