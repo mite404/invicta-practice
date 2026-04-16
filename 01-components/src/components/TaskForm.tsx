@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import type { Task } from '../types/task'
+import { useState } from "react";
+import type { Task } from "../types/task";
 
 interface TaskFormProps {
-  onSubmit: (task: Omit<Task, 'id' | 'createdAt'>) => void
+  onSubmit: (task: Omit<Task, "id" | "createdAt">) => void;
 }
 
 /**
@@ -13,32 +13,35 @@ interface TaskFormProps {
  * before submission and provide real-time validation feedback.
  */
 export default function TaskForm({ onSubmit }: TaskFormProps) {
-  const [title, setTitle] = useState('')
-  const [status, setStatus] = useState<'todo' | 'in_progress' | 'complete' | 'blocked'>('todo')
-  const [priority, setPriority] = useState<'high' | 'medium' | 'low'>('medium')
-  const [description, setDescription] = useState('')
+  const [title, setTitle] = useState("");
+  const [status, setStatus] = useState<"todo" | "in_progress" | "complete" | "blocked">("todo");
+  const [priority, setPriority] = useState<"high" | "medium" | "low">("medium");
+  const [description, setDescription] = useState("");
 
   // TODO: Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     // TODO: Validate that title is not empty
-    if (___________) {
-      alert('Title is required')
-      return
+    if (!title) {
+      alert("Title is required");
+      return;
     }
 
     // TODO: Call onSubmit with the form data
     onSubmit({
-      title: ___________,
-      status: ___________,
-      priority: ___________,
-      description: ___________ ? description : undefined,
-    })
+      title: title,
+      status: status,
+      priority: priority,
+      description: description ? description : undefined,
+    });
 
     // TODO: Reset form fields
-    ___________
-  }
+    setTitle("");
+    setStatus("todo");
+    setPriority("medium");
+    setDescription("");
+  };
 
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow p-6">
@@ -51,8 +54,8 @@ export default function TaskForm({ onSubmit }: TaskFormProps) {
         <input
           id="title"
           type="text"
-          value={___________}
-          onChange={(e) => ___________}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter task title"
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
@@ -64,7 +67,7 @@ export default function TaskForm({ onSubmit }: TaskFormProps) {
         </label>
         <select
           id="status"
-          value={___________}
+          value={status}
           onChange={(e) => setStatus(e.target.value as any)}
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         >
@@ -81,7 +84,7 @@ export default function TaskForm({ onSubmit }: TaskFormProps) {
         </label>
         <select
           id="priority"
-          value={___________}
+          value={priority}
           onChange={(e) => setPriority(e.target.value as any)}
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         >
@@ -97,8 +100,8 @@ export default function TaskForm({ onSubmit }: TaskFormProps) {
         </label>
         <textarea
           id="description"
-          value={___________}
-          onChange={(e) => ___________}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
           placeholder="Add task details..."
           rows={3}
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
@@ -112,5 +115,5 @@ export default function TaskForm({ onSubmit }: TaskFormProps) {
         Create Task
       </button>
     </form>
-  )
+  );
 }

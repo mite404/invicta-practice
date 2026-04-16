@@ -3,7 +3,7 @@
  */
 
 // Status options for campaign tasks
-export type TaskStatus = "in_progress" | "completed" | "todo" | "blocked";
+export type TaskStatus = "in_progress" | "complete" | "todo" | "blocked";
 
 // Priority levels for task organization
 export type Priority = "high" | "medium" | "low";

@@ -19,8 +19,8 @@ export default function StatusBadge({ status }: StatusBadgeProps) {
       bgColor: "bg-yellow-200",
       textColor: "text-gray-300",
     },
-    completed: {
-      label: "Completed",
+    complete: {
+      label: "Complete",
       bgColor: "bg-green-300",
       textColor: "text-gray-300",
     },
