@@ -51,29 +51,32 @@ export default function useTaskManager(): UseTaskManagerReturn {
 
   // TODO: Implement addTask function
   const addTask = (newTask: Omit<Task, "id" | "createdAt">) => {
-    if (!newTask) {
-      return console.log("Error: Task not valid");
-    }
-
     const updatedTask = {
       id: Date.now().toString(),
       createdAt: new Date().toISOString(),
       ...newTask,
     };
 
-    const updatedTasksArr = [...tasks, updatedTask];
-
-    setTasks(updatedTasksArr);
+    setTasks([...tasks, updatedTask]);
   };
 
   // TODO: Implement updateTask function
   const updateTask = (id: string, updates: Partial<Task>) => {
-    ___________;
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          ...updates,
+        };
+      } else return task;
+    });
+    setTasks(updatedTasks);
   };
 
   // TODO: Implement deleteTask function
   const deleteTask = (id: string) => {
-    ___________;
+    const filteredTasksArr = tasks.filter((task) => task.id !== id);
+    setTasks(filteredTasksArr);
   };
 
   // TODO: Implement filtered and sorted tasks using useMemo
