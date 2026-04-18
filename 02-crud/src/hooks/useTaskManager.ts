@@ -84,7 +84,33 @@ export default function useTaskManager(): UseTaskManagerReturn {
   // 2. Sort by created date (newest first), priority (high→medium→low), or dueDate
   // Remember to depend on [tasks, filterStatus, sortBy]
   const filteredTasks = useMemo(() => {
-    ___________;
+    let result = tasks;
+
+    // filter by status
+    if (filterStatus !== "all") {
+      result = result.filter((t) => t.status === filterStatus);
+    }
+
+    // sort based on
+    if (sortBy === "created") {
+      result = [...result].sort((a, b) => {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      });
+    } else if (sortBy === "priority") {
+      result = [...result].sort((a, b) => {
+        const priorityOrder = { high: 3, medium: 2, low: 1 };
+
+        return priorityOrder[b.priority] - priorityOrder[a.priority];
+      });
+    } else if (sortBy === "dueDate") {
+      result = [...result].sort((a, b) => {
+        if (!a.dueDate) return 1;
+        if (!b.dueDate) return -1;
+        return a.dueDate.localeCompare(b.dueDate);
+      });
+    }
+
+    return result;
   }, [tasks, filterStatus, sortBy]);
 
   return {
